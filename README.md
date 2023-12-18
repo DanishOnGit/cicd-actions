@@ -1,0 +1,1 @@
+[![first-job](https://github.com/DanishOnGit/cicd-actions/actions/workflows/text.yaml/badge.svg)](https://github.com/DanishOnGit/cicd-actions/actions/workflows/text.yaml)
