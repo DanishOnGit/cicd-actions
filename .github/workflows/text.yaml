@@ -6,12 +6,12 @@ jobs:
   steps:
     - run: echo "hello world"
     - run: echo "how are you"
-  print-hello-world-2:
+ print-hello-world-2:
    runs-on: ubuntu-latest
    steps:
     - run: echo "hello world"
     - run: echo "how are you"
-  tree-job:
+ tree-job:
    runs-on: ubuntu-latest
    steps:
     - name: test-job-step-1
