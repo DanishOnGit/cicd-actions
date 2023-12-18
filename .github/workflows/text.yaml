@@ -6,3 +6,16 @@ jobs:
   steps:
     - run: echo "hello world"
     - run: echo "how are you"
+  print-hello-world-2:
+   runs-on: ubuntu-latest
+   steps:
+    - run: echo "hello world"
+    - run: echo "how are you"
+  tree-job:
+   runs-on: ubuntu-latest
+   steps:
+    - name: test-job-step-1
+      uses: actions/checkout@v2
+      run: tree
+   
+   
