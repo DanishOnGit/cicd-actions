@@ -14,7 +14,7 @@ jobs:
       id: complete
       run: echo "::set-output name=var1::my name is var1"
  test-job:
-  needs: tree-job
+  needs: treeJob
   runs-on: ubuntu-latest
   env:
    MY_VARIABLE: ${{ needs.treeJob.outputs.text}}
