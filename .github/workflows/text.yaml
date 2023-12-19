@@ -19,7 +19,7 @@ jobs:
   env:
    MY_VARIABLE: ${{ needs.treeJob.outputs.text}}
   steps:
-   - run: echo "YOLOoo $MY_VARIABLE"
+   - run: echo $MY_VARIABLE
  build-project:
    runs-on: ubuntu-latest
    env:
