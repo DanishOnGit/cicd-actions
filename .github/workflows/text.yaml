@@ -6,11 +6,6 @@ jobs:
   steps:
     - run: echo "hello world"
     - run: echo "how are you"
- print-hello-world-2:
-   runs-on: ubuntu-latest
-   steps:
-    - run: echo "hello world"
-    - run: echo "how are you"
  tree-job:
    runs-on: ubuntu-latest
    steps:
@@ -18,5 +13,18 @@ jobs:
       uses: actions/checkout@v2
     - name: test-job-step-2
       run: tree
+  build-project:
+   runs-on: ubuntu-latest
+   steps:
+    - name: Install nodejs
+      uses: actions/setup-node@v2
+      with:
+       node-version: "14.17.0"
+    - name: Install deps
+      run: yarn
+    - name: Build the project
+      run: yarn build
+    - name: Completion
+      run: echo "Done!"
    
    
