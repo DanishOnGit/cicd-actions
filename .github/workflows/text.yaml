@@ -16,7 +16,7 @@ jobs:
     - name: Install nodejs
       uses: actions/setup-node@v2
       with:
-       node-version: "16.0.0"
+       node-version: "17.0.0"
     - name: Install deps
       run: yarn
     - name: Build the project
@@ -28,6 +28,7 @@ jobs:
         cd .vercel
         touch project.json
         echo "{"projectId":"prj_JMwYXVj3FhXC7s8F9BGzz4Nfk0Rk","orgId":"uppGr9DlNxrPctgJtszJYVMu"}" > project.json
+        cat project.json
     - name: Deploy the project
       run: yarn run deploy
     - name: Completion
