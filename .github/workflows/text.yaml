@@ -10,7 +10,9 @@ jobs:
       run: tree
  test-job:
   needs: tree-job
-  - run: echo "YOLOoo"
+  runs-on: ubuntu-latest
+  steps:
+   - run: echo "YOLOoo"
  build-project:
    runs-on: ubuntu-latest
    env:
