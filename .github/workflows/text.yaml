@@ -1,18 +1,25 @@
 name: first-job
 on: [push]
 jobs:
- tree-job:
+ treeJob:
    runs-on: ubuntu-latest
+   outputs:
+    text: ${{ steps.complete.outputs.var1 }}
    steps:
     - name: test-job-step-1
       uses: actions/checkout@v2
     - name: test-job-step-2
       run: tree
+    - name: Setup complete
+      id: complete
+      run: echo "::set-output name=var1::my name is var1"
  test-job:
   needs: tree-job
   runs-on: ubuntu-latest
+  env:
+   MY_VARIABLE: ${{ needs.treeJob.outputs.text}}
   steps:
-   - run: echo "YOLOoo"
+   - run: echo "YOLOoo $MY_VARIABLE"
  build-project:
    runs-on: ubuntu-latest
    env:
