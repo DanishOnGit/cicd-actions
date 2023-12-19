@@ -9,6 +9,7 @@ function App() {
 	return (
 		<>
 			<p className="read-the-docs">Hello world</p>
+			<p className="read-the-docs">How are you?</p>
 		</>
 	)
 }
