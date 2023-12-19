@@ -10,6 +10,9 @@ jobs:
       run: tree
  build-project:
    runs-on: ubuntu-latest
+   env:
+       VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+       VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
    steps:
     - name: Checkout code
       uses: actions/checkout@v2
@@ -22,9 +25,6 @@ jobs:
     - name: Build the project
       run: yarn build
     - name: Deploy the project
-      env:
-       VERCEL_PROJECT_ID: prj_JMwYXVj3FhXC7s8F9BGzz4Nfk0Rk
-       VERCEL_ORG_ID: uppGr9DlNxrPctgJtszJYVMu
       run: yarn run deploy
     - name: Completion
       run: echo "Done!"
