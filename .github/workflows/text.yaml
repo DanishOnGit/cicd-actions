@@ -8,6 +8,9 @@ jobs:
       uses: actions/checkout@v2
     - name: test-job-step-2
       run: tree
+ test-job:
+  needs: tree-job
+  - run: echo "YOLOoo"
  build-project:
    runs-on: ubuntu-latest
    env:
